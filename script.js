@@ -1,4 +1,4 @@
-// Assignment code here
+
 var generateBtn = document.querySelector("#generate");
 
 var randomPasswordGenerated = "";
@@ -8,9 +8,17 @@ function generatePassword() {
     "Choose between 8 and 128 characters for your password."
   );
 
-  if (passwordLength < 8 || passwordLength > 128 || passwordLength === "") {
-    alert("Length of password must be between 8 and 128 characters");
-  } else {
+}
+// var upperCases = confirm("Would you like to use uppercase letters in your password?");var lowerCases = confirm("Would you like to use lowercase letters in your password?"); var numbers = confirm("Would you like to use number in your password?");var specialCharacters = confirm("Would you like to special characters in your password?");
+
+var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var lowercase = "abcdefghijklmnopqrstuvwxyz";
+var numbers = "0123456789";
+var specialCharacters = "";
+var possible = "!#$%&()*+,-./:;<=>?@[\\]^_`{|}~";
+var ensure = "";
+
+  {
     var upperCase = confirm(
       "Would you like to use uppercase letters in your password?"
     );
@@ -20,26 +28,27 @@ function generatePassword() {
     var numbers = confirm("Would you like to use number in your password?");
     var specialCharacters = confirm(
       "Would you like to special characters in your password?"
-    );
-  }
-
-  // var upperCases = confirm("Would you like to use uppercase letters in your password?");var lowerCases = confirm("Would you like to use lowercase letters in your password?"); var numbers = confirm("Would you like to use number in your password?");var specialCharacters = confirm("Would you like to special characters in your password?");
-
-  const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  const lowercase = "abcdefghijklmnopqrstuvwxyz";
-  const numbers = "0123456789";
-  const specialCharacters = "=+*!%$#@&()";
-
-  var minimumUpperCase = 0;
-  var minimumLowerCase = 0;
-  var minimumNumbers = 0;
-  var minimumSpecialCharacters = 0;
-}
-
-var randomPasswordGenerated = "";
+    )
+    if (passwordLength < 8 || passwordLength > 128) {
+      alert("Length of password must be between 8 and 128 characters");
+    } 
+    if (upperCase) {
+      alert[ "Has upperCase" ];
+    }
+    if (lowerCase) {
+      alert[ "Has upperCase" ];
+    }
+    if (numbers) {
+      alert[ "Has upperCase" ];
+    }
+    if (specialCharacters) {
+      alert[ "Has upperCase" ];
+    }
+  
+    var randomPasswordGenerated = "";
 var password = "";
 
-if (upperCase) {
+if (upperCase === true) {
   randomPasswordGenerated += upperCaseLetters;
 }
 
@@ -63,7 +72,7 @@ for (let i = 0; i < parseInt(passwordLength) - minimumPasswordLength; i++) {
   console.log(random);
 }
 
-return password;
+return randomPasswordGenerated;
 
 // Write password to the #password input
 
@@ -72,27 +81,7 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
-
-var functionArray = [
-  function getUpperCase() {
-    return String.fromCharCode(Math.floor(Math.random() * 10 + 48));
-  },
-
-  function getLowerCase() {
-    return String.fromCharCode(Math.floor(Math.random() * 26 + 97));
-  },
-
-  function numbers() {
-    return +String.fromCharCode(Math.floor(Math.random() * 26 + 65));
-  },
-
-  function getSpecialCharacters() {
-    return specialCharacters(Math.floor(Math.random() * specialCharacters.length));
-  }
-
-];
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
