@@ -6,7 +6,11 @@ var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
   var passwordPrompt = prompt("Choose between 8 and 128 characters for your password.")
-  var passwordLength = parseInt(passwordPrompt); 
+  var passwordLength = parseInt(passwordPrompt);
+  return generatePassword(); 
+
+}
+
   if (passwordLength < 8 || passwordLength > 128) {
     alert("The length of your password must be between 8 and 128 characters.");
     return generatePassword(); 
@@ -52,11 +56,10 @@ function generatePassword() {
     var randomPasswordGenerated = Math.floor(Math.random() * randomPasswordGenerated.length);
     password += randomPasswordGenerated[random];
     console.log(random);
-  }
-  return password;
-
     
-}
+    return generatePassword;
+  }
+
 
 
 
@@ -66,6 +69,7 @@ function generatePassword() {
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
+  return randomPasswordGenerated;
 
   passwordText.value = password;
 
