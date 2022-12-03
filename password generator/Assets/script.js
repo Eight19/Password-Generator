@@ -10,6 +10,13 @@ function generatePassword() {
   if (passwordLength < 8 || passwordLength > 128) {
     alert("The length of your password must be between 8 and 128 characters.");
     return generatePassword(); 
+
+    var password = "";
+    var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var lowercase = "abcdefghijklmnopqrstuvwxyz";
+    var numeric = "0123456789";
+    var specialCharacters = "!#$%&()*+,-./:;<=>?@[\\]^_`{|}~";
+    var possible = "";
   } 
   else {
     var upperCase = confirm("Use uppercase letters in your password?");
@@ -20,12 +27,7 @@ function generatePassword() {
   
   // var upperCases = confirm("Would you like to use uppercase letters in your password?");var lowerCases = confirm("Would you like to use lowercase letters in your password?"); var numbers = confirm("Would you like to use number in your password?");var specialCharacters = confirm("Would you like to special characters in your password?");
   
-  var password = "";
-  var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  var lowercase = "abcdefghijklmnopqrstuvwxyz";
-  var numeric = "0123456789";
-  var specialCharacters = "!#$%&()*+,-./:;<=>?@[\\]^_`{|}~";
-  var possible = "";
+ 
   
   var randomPasswordGenerated = "";
   var password = "";
